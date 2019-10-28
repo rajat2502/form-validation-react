@@ -10,7 +10,7 @@ const formValid = ({ formErrors, ...rest }) => {
 
   //validate form was fill out
   Object.values(rest).forEach(val => {
-    val === null && (valid = false);
+    val === "" && (valid = false);
   });
 
   return valid;
@@ -25,10 +25,10 @@ class App extends Component {
     super(props);
 
     this.state = {
-      firstName: null,
-      lastName: null,
-      email: null,
-      password: null,
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: "",
       formErrors: {
         firstName: "",
         lastName: "",
